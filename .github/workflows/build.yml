@@ -20,6 +20,7 @@ jobs:
         cargo install cross
         git clone --single-branch --depth=1 -b v5.1.3 https://github.com/sigp/lighthouse
         cd lighthouse
+        cargo install time
         cross build --bin lcli --target x86_64-unknown-linux-gnu --features "portable,spec-minimal" --profile "maxperf" --locked
         find . -type f -name lcli 2>/dev/null
     # Create release
